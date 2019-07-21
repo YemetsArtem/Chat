@@ -1,0 +1,66 @@
+@import "normalize";
+@import "profile";
+@import "chat";
+
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+header {
+    .nav {
+        background-color: #252527;
+        padding: 25px;
+        font-size: 22px;
+
+        .logo {
+            color: white;
+            letter-spacing: 3px;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+    }
+}
+
+.front-page {
+    background: url("https://mdbootstrap.com/img/Photos/Others/img (50).jpg")no-repeat center center / cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .text {
+        font-size: 60px;
+        font-weight: 900;
+        letter-spacing: 8px;
+        color: wheat;
+    }
+
+    .goto {
+        color: #FFFFFF;
+        background-color: rgba(255, 255, 255, 0.185);
+        text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #1c18ff, 0 0 30px #1c18ff, 0 0 40px #1c18ff, 0 0 55px #1c18ff, 0 0 75px #1c18ff;
+        font-size: 28px;
+        font-style: italic;
+        border-radius: 15px;
+        padding: 8px;
+    }
+}
+
+.autorization {
+    font-size: 22px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

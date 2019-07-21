@@ -1,0 +1,240 @@
+@mixin hover {
+    color: aqua;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.chat {
+    display: flex;
+    height: 100%;
+}
+
+.chat-messages {
+    overflow: auto;
+    max-height: 80vh;
+}
+
+.chat-menu {
+    display: inherit;
+    flex-direction: column;
+    flex-basis: 360px;
+    margin: 15px;
+    padding: 0 45px;
+    border-radius: 7px;
+    background-color: #262527;
+    color: white;
+
+    .members {
+        flex-basis: 50%;
+    }
+
+    .members-head {
+        font-size: 1.5em;
+    }
+
+    .members-list {
+        font-size: 1.2em;
+        padding: 0;
+        margin: 0;
+    }
+
+    .user {
+        display: inherit;
+        justify-content: flex-start;
+        padding: 17px 0;
+        list-style: none;
+
+        &:hover {
+            transform: scaleY(1.1);
+            padding-left: 12px;
+            border-radius: 10px;
+            background-color: #37363a8e;
+            cursor: pointer;
+        }
+
+        .user_name {
+            margin: 0 10px;
+            align-self: center;
+        }
+
+        .photo {
+            width: 45px;
+            height: 40px;
+            border-radius: 100%;
+        }
+
+        .you {
+            align-self: center;
+            color: rgba(185, 185, 185, 0.822);
+        }
+    }
+
+    .rooms {
+        flex-basis: 50%;
+
+        h1 {
+            letter-spacing: 4px;
+            font-size: 2.2em;
+            font-weight: 900;
+            margin-top: 0;
+        }
+    }
+
+    .rooms-list {
+        font-weight: 600;
+        letter-spacing: 2px;
+        font-size: 1.7em;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        .room:hover {
+            @include hover;
+        }
+
+        .add {
+            display: flex;
+
+            p {
+                flex-grow: 1;
+                margin: 0;
+                display: inline-block;
+                color: gray;
+            }
+
+            button {
+                background: none;
+                outline: none;
+                border: 1px solid gray;
+                border-radius: 3px;
+                color: gray;
+                text-align: center;
+                padding: 0 7px;
+
+                &:hover {
+                    border: 1px solid aqua;
+                    color: aqua;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #new_room {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+
+            input,
+            button {
+                border: 2px solid gray;
+                border-radius: 5px;
+                background: none;
+                outline: none;
+                color: gray;
+                font-size: 18px;
+                padding: 7px;
+            }
+
+            input {
+                padding-right: 5px;
+            }
+
+            button:hover {
+                color: aqua;
+                cursor: pointer;
+
+            }
+        }
+    }
+}
+
+.chat-content {
+    flex-grow: 1;
+    display: inherit;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .messages-title {
+        text-align: center;
+    }
+
+    .chat-form {
+        display: inherit;
+        justify-content: space-between;
+        width: 95%;
+        padding: 3px;
+        margin: 1% auto;
+        border-radius: 10px;
+        background: #000;
+
+        & input {
+            flex-grow: 1;
+            border: 0;
+            padding: 12px;
+            margin-right: 5px;
+        }
+
+        & button {
+            background: rgb(130, 224, 255);
+            border: none;
+            padding: 12px;
+        }
+    }
+
+
+    #messages-content {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+
+        .message {
+            display: inherit;
+            height: 150px;
+            padding: 15px 10px;
+            cursor: pointer;
+
+            .photo {
+                flex-basis: 50px;
+                height: 50px;
+                border-radius: 100%;
+                padding: 0 20px;
+            }
+
+            .message-content {
+                flex-grow: 1;
+                max-width: 33%;
+                min-width: 400px;
+                padding: 5px 10px;
+                border: 2px solid gray;
+                border-radius: 5px;
+                box-shadow: 3px 1px 19px -6px rgba(12, 27, 95, 0.99);
+                font-size: 20px;
+
+                .nickname {
+                    font-size: 1em;
+                    font-weight: 800;
+                }
+
+                .text {
+                    font-size: 0.9em;
+                }
+            }
+        }
+    }
+
+}
+
+
+// Additional classes
+#messages-content #reverse {
+    justify-self: flex-end;
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+#messages-content .message #color {
+    box-shadow: 3px 1px 19px -6px rgba(100, 9, 9, 0.99);
+}
